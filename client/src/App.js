@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import { Landing, Registration, AddHabit, TodayHabits,AllHabits} from './pages';
+import { Landing, Registration, AddHabit, TodayHabits, AllHabits, Achievements, NotFound} from './pages';
 import { Header, Footer } from './layout';
 
 import './styles/app.css';
@@ -20,6 +20,8 @@ class App extends React.Component {
                     <Route path="/add" component={AddHabit} />
                     <Route path="/today" component={TodayHabits} />
                     <Route path="/all" component={AllHabits} />
+                    <Route path="/achievements" component={Achievements} />
+                    <Route path="/*" component={NotFound} />
                 </Switch>
                 </main>
     

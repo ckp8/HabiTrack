@@ -1,5 +1,7 @@
-export { default as Landing } from './Landing'
+export { default as Landing } from './landing'
 export { default as Registration } from './Registration'
 export { default as TodayHabits } from './TodayHabits'
 export { default as AddHabit } from './AddHabit'
 export { default as AllHabits } from './AllHabits'
+export { default as Achievements } from './Achievements'
+export { default as NotFound } from './NotFound'
