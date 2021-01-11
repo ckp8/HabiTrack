@@ -1,6 +1,8 @@
 import React, {Component,useState} from 'react';
 import Button from 'react-bootstrap/Button';
-import { Button } from 'elemental'
+import {ButtonGroup} from 'react-bootstrap';
+import {ToggleButton} from 'react-bootstrap';
+
 
 
  function newHabit() {
@@ -49,7 +51,7 @@ import { Button } from 'elemental'
       </ButtonGroup>
     </>
   );
-  render(<Habit/>);
+  // render(<Habit/>);
 }
 
 
