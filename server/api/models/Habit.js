@@ -29,9 +29,9 @@ module.exports = class Habit {
             try {
                 let habitData = await db.run(SQL`SELECT habits.*, users.username as username
                                                     FROM habits
-                                                    JOIN user ON users.id = habits.user_id
+                                                    JOIN users ON users.id = habits.user_id
                                                     WHERE habits.id = ${id};`);     //This is probably wrong
-                let habit = new Book(habitData.rows[0]);
+                let habit = new Habit(habitData.rows[0]);
                 resolve (habit);
             } catch (err) {
                 reject('Habit not found');
