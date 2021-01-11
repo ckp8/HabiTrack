@@ -31,7 +31,7 @@ module.exports = {
       template: 'public/index.html',
       filename: 'index.html',
       inject: 'body',
-      favicon: 'public/favicon.ico'
+     // favicon: 'public/favicon.ico'
     })
   ]
 };
