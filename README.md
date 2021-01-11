@@ -1,7 +1,7 @@
 # HabiTrack
 
-*Do you find hard to adobt new habits or be consistant with the one you already have? Then HabiTrack is the app for you!
-Just login to your personal account from where you can keep track of all your current habits.
+*Do you find it hard to adopt new habits or be consistant with the ones you already have? Then HabiTrack is the app for you!
+Just login to your personal account where you can keep track of all your current habits.
 New to our application? All you have to do is create a new account and choose a new habit for you to keep track of!*
 
 
@@ -66,3 +66,4 @@ In no specific order:
 [TaraHussain](https://github.com/TaraHussain),
 [kail0n](https://github.com/kail0n),
 [ckp88](https://github.com/ckp88)
+
