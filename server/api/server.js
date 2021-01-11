@@ -8,6 +8,13 @@ server.use(cors()); // gives access to req.body
 server.use(express.json());
 
 // ROUTES
+
+//register and login
+server.use("/auth", require("./routes/jwtAuth"));
+
+//dashboard
+app.use("/dashboard", require("./routes/dashboard"));
+
 const habitsRoutes = require("./routes/habits");
 const usersRoutes = require("./routes/users");
 server.use("/habits", habitsRoutes);
