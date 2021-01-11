@@ -14,15 +14,15 @@ function show (req, res) {
 
 function create (req, res) {
     Habit.create(req.body)
-        .then(habit => res.status(200).json(habit))
+        .then(habit => res.status(201).json(habit))
         .catch(err => res.status(422).json({err}))
 }
 
 async function destroy (req, res) {
     try {
-        const habit = Habit.findById(req.params.id);
-        const resp = habit.destroy();
-        res.status(200).end();
+        const habit = await Habit.findById(req.params.id);
+        const resp = await habit.destroy();
+        res.status(204).end();
     } catch (err) {
         res.status(404).json({err});
     };

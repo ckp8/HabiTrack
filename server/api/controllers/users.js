@@ -1,10 +1,9 @@
 const User = require('../models/User');
 
-function index(req, res) {
+async function index(req, res) {
     try {
         const user = await User.all;
-        const habits = await user.habits;
-        res.json({ ...user, habits });
+        res.json(user);
     } catch (err) {
         res.status(500).send(err);
     };

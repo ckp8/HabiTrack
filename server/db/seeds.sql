@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS habits;
 
 CREATE TABLE habits (
     id serial PRIMARY KEY,
-    title VARCHAR(20),
+    title VARCHAR(20) NOT NULL,
     description VARCHAR(200),
     completed BOOLEAN,
     user_id INT
