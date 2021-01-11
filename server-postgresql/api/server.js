@@ -5,10 +5,10 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-// const booksRoutes = require('./routes/books')
-// const authorsRoutes = require('./routes/authors')
-// server.use('/books', booksRoutes)
-// server.use('/authors', authorsRoutes)
+const booksRoutes = require('./routes/habits')
+const authorsRoutes = require('./routes/users')
+server.use('/habits', booksRoutes)
+server.use('/users', authorsRoutes)
 
 server.get('/', (req, res) => res.send('Welcome'))
 
