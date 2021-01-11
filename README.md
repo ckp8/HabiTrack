@@ -14,7 +14,8 @@ In order to run our project you need first to install all the necessary dependen
 This will install all necessary server dependencies, create the containers and get the server and database up and running.
 
 - Then `cd ../client` to go inside the client folder, followed by a `npm install` to get all the necessary dependencies.
-- After that you can `npm run start` to get the client up and running on your browser.
+- After that you can `npm run start` to get the client up and running.
+Go to `localhost:8000` in your browser to interact with the application
 
 To shutdown any docker-compose enviroment:
 - `docker-compose stop` to stop containers (databe data will remain intact)
