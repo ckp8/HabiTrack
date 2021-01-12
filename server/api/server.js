@@ -13,7 +13,7 @@ server.use(express.json());
 server.use("/auth", require("./routes/jwtAuth"));
 
 //dashboard
-app.use("/dashboard", require("./routes/dashboard"));
+// server.use("/dashboard", require("./routes/dashboard"));
 
 const habitsRoutes = require("./routes/habits");
 const usersRoutes = require("./routes/users");
