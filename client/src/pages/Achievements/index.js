@@ -4,8 +4,6 @@ class Achievements extends React.Component {
     render() {
         return (
             <h1>Achievements page!</h1>
-
-            
         )
     }
 }

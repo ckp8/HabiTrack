@@ -5,11 +5,7 @@ import {ToggleButton} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import "../newHabit.css"
 
-
-
-
-
- function newHabit() {
+function newHabit() {
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState(7);
 
@@ -21,35 +17,33 @@ import "../newHabit.css"
     { name: 'Friyay', value: '5'},
     { name: 'Saturday', value: '6'},
     { name: 'Sunday', value : '7'}
-
   ];
 
   return (
     <>
       <div className ="apple">
-      <div className = "container">
-        <div className = "child"> 
-      <ButtonGroup toggle>
-        {radios.map((radio, idx) => (
-          <ToggleButton
-            key={idx}
-            type="radio"
-            variant="secondary"
-            name="radio"
-            value={radio.value}
-            checked={radioValue === radio.value}
-            onChange={(e) => setRadioValue(e.currentTarget.value)}
-          >
-            {radio.name}
-          </ToggleButton>
-        ))}
-      </ButtonGroup>
-      <br/>
-      <button type = "submit">Submit</button>
+        <div className = "container">
+          <div className = "child"> 
+            <ButtonGroup toggle>
+              {radios.map((radio, idx) => (
+                <ToggleButton
+                  key={idx}
+                  type="radio"
+                  variant="secondary"
+                  name="radio"
+                  value={radio.value}
+                  checked={radioValue === radio.value}
+                  onChange={(e) => setRadioValue(e.currentTarget.value)}
+                  >
+                    {radio.name}
+                </ToggleButton>
+              ))}
+            </ButtonGroup>
+            <br/>
+            <button type = "submit">Submit</button>
+          </div>
+        </div>
       </div>
-      </div>
-      </div>
-    
     </>
   );
   // render(<Habit/>);
