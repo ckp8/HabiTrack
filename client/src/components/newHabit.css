@@ -1,0 +1,10 @@
+.apple {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+.container {
+    
+    display: flex;
+    justify-content: center;
+  }

@@ -2,12 +2,16 @@ import React, {Component,useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import {ButtonGroup} from 'react-bootstrap';
 import {ToggleButton} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import "../newHabit.css"
+
+
 
 
 
  function newHabit() {
   const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState('7');
+  const [radioValue, setRadioValue] = useState(7);
 
   const radios = [
     { name: 'Monday', value: '1' },
@@ -22,18 +26,22 @@ import {ToggleButton} from 'react-bootstrap';
 
   return (
     <>
-      <ButtonGroup toggle className="mb-2">
+      {/* <ButtonGroup toggle className="mb-2">
         <ToggleButton
           type="checkbox"
           variant="secondary"
-          checked={checked}
+          checked={checked}import 'bootstrap/dist/css/bootstrap.css';
+
           value="1"
           onChange={(e) => setChecked(e.currentTarget.checked)}
         >
           Checked
-        </ToggleButton>
-      </ButtonGroup>
+        </ToggleButton> */}
+      {/* </ButtonGroup> */}
       <br />
+      <div className ="apple">
+      <div className = "container">
+        <div className = "child">
       <ButtonGroup toggle>
         {radios.map((radio, idx) => (
           <ToggleButton
@@ -49,6 +57,9 @@ import {ToggleButton} from 'react-bootstrap';
           </ToggleButton>
         ))}
       </ButtonGroup>
+      </div>
+      </div>
+      </div>
     </>
   );
   // render(<Habit/>);
