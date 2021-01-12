@@ -17,7 +17,7 @@ services:
       - type: bind
         source: ./
         target: /server
-    command: bash -c "npm install && npm start"
+    command: bash -c "npm install && npm uninstall bcrypt && npm install bcrypt && npm start"
 
   db:
     image: postgres:latest
@@ -32,3 +32,4 @@ services:
       - POSTGRES_PASSWORD=habitpass
 volumes:
   dbdata:
+    
