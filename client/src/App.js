@@ -25,8 +25,9 @@ class App extends React.Component {
                     <Route path="/today" component={TodayHabits} />
                     <Route path="/all" component={AllHabits} />
                     <Route path="/achievements" component={Achievements} />
+                    <Route path ="/create" component={newHabit}/>
                     <Route path="/*" component={NotFound} />
-                  <Route path ="/create" component={newHabit}/>
+                    
                 </Switch>
                 </main>
     

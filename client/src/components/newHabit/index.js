@@ -11,24 +11,32 @@ import "../newHabit.css"
 
  function newHabit() {
   const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState(7);
+  const [radioValue, setRadioValue] = useState("7");
 
   const radios = [
-    { name: 'Monday', value: '1' },
-    { name: 'Tuesday', value: '2' },
-    { name: 'Wednesday', value: '3' },
-    { name: 'Thursday', value: '4'},
-    { name: 'Friyay', value: '5'},
-    { name: 'Saturday', value: '6'},
-    { name: 'Sunday', value : '7'}
+    { name: 'Mon', value: '1' },
+    { name: 'Tues', value: '2' },
+    { name: 'Wed', value: '3' },
+    { name: 'Thur', value: '4'},
+    { name: 'Fri', value: '5'},
+    { name: 'Sat', value: '6'},
+    { name: 'Sun', value : '7'}
 
   ];
 
   return (
     <>
+    
       <div className ="apple">
       <div className = "container">
         <div className = "child"> 
+        <form>
+        <h1>Hello</h1>
+        <div className = "textbox">
+     <textarea>add description</textarea>
+     </div> 
+     </form>
+    
       <ButtonGroup toggle>
         {radios.map((radio, idx) => (
           <ToggleButton
