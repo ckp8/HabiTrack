@@ -1,4 +1,3 @@
-
 import { Switch, Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import {newHabit} from "./components";
@@ -8,14 +7,12 @@ import { Header, Footer } from './layout';
 
 // import './styles/app.css';
 
-
 class App extends React.Component {
     render() {
         return (
             <div id="App">
                 <Header />
                 {/* <NavBar /> */}
-    
                 <main>
                 <Switch>
                     <Route exact path="/" component={Landing} />
@@ -25,17 +22,14 @@ class App extends React.Component {
                     <Route path="/today" component={TodayHabits} />
                     <Route path="/all" component={AllHabits} />
                     <Route path="/achievements" component={Achievements} />
+                    <Route path ="/create" component={newHabit}/>
                     <Route path="/*" component={NotFound} />
-                  <Route path ="/create" component={newHabit}/>
                 </Switch>
                 </main>
-    
                 <Footer />
             </div>
         );
     }
-
 }
-
 
 export default App;
