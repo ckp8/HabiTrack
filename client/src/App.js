@@ -1,41 +1,32 @@
-
 import { Switch, Route } from 'react-router-dom';
 import React, { Component } from 'react';
-import {newHabit} from "./components";
 
-import { Landing, Registration, AddHabit, TodayHabits, AllHabits, Achievements, NotFound, Login} from './pages';
+import { Landing, newHabit, Registration, TodayHabits, AllHabits, Achievements, NotFound, Login} from './components';
 import { Header, Footer } from './layout';
 
 // import './styles/app.css';
-
 
 class App extends React.Component {
     render() {
         return (
             <div id="App">
                 <Header />
-                {/* <NavBar /> */}
-    
                 <main>
                 <Switch>
                     <Route exact path="/" component={Landing} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Registration} />
-                    <Route path="/add" component={AddHabit} />
                     <Route path="/today" component={TodayHabits} />
                     <Route path="/all" component={AllHabits} />
                     <Route path="/achievements" component={Achievements} />
+                    <Route path ="/create" component={newHabit}/>
                     <Route path="/*" component={NotFound} />
-                  <Route path ="/create" component={newHabit}/>
                 </Switch>
                 </main>
-    
                 <Footer />
             </div>
         );
     }
-
 }
-
 
 export default App;
