@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+
 import { Switch, Route } from 'react-router-dom';
+import React, { Component } from 'react';
+import {newHabit} from "./components";
 
 import { Landing, Registration, AddHabit, TodayHabits, AllHabits, Achievements, NotFound, Login} from './pages';
 import { Header, Footer } from './layout';
 
 // import './styles/app.css';
+
 
 class App extends React.Component {
     render() {
@@ -23,6 +26,7 @@ class App extends React.Component {
                     <Route path="/all" component={AllHabits} />
                     <Route path="/achievements" component={Achievements} />
                     <Route path="/*" component={NotFound} />
+                  <Route path ="/create" component={newHabit}/>
                 </Switch>
                 </main>
     
@@ -30,6 +34,8 @@ class App extends React.Component {
             </div>
         );
     }
+
 }
+
 
 export default App;
