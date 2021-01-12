@@ -26,22 +26,9 @@ import "../newHabit.css"
 
   return (
     <>
-      {/* <ButtonGroup toggle className="mb-2">
-        <ToggleButton
-          type="checkbox"
-          variant="secondary"
-          checked={checked}import 'bootstrap/dist/css/bootstrap.css';
-
-          value="1"
-          onChange={(e) => setChecked(e.currentTarget.checked)}
-        >
-          Checked
-        </ToggleButton> */}
-      {/* </ButtonGroup> */}
-      <br />
       <div className ="apple">
       <div className = "container">
-        <div className = "child">
+        <div className = "child"> 
       <ButtonGroup toggle>
         {radios.map((radio, idx) => (
           <ToggleButton
@@ -57,9 +44,12 @@ import "../newHabit.css"
           </ToggleButton>
         ))}
       </ButtonGroup>
+      <br/>
+      <button type = "submit">Submit</button>
       </div>
       </div>
       </div>
+    
     </>
   );
   // render(<Habit/>);
