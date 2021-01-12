@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './header.css';
 class Header extends React.Component {
     state = {
-        username: 's'
+        username: this.props.user.username
     }
 
     // fetchUsers = () => {
