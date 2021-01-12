@@ -7,9 +7,9 @@ DROP TABLE IF EXISTS habits;
 -- requires uuid-ossp extension
 CREATE TABLE users (
     id serial PRIMARY KEY,
-    username VARCHAR(40) NOT NULL,
-    email VARCHAR(200) NOT NULL,
-    password VARCHAR(20) NOT NULL
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
 );
 
 -- dummy data
@@ -22,7 +22,7 @@ VALUES
 
 CREATE TABLE habits (
     id serial PRIMARY KEY,
-    title VARCHAR(20) NOT NULL,
+    title VARCHAR(200) NOT NULL,
     description VARCHAR(200),
     completed BOOLEAN,
     user_id INT
