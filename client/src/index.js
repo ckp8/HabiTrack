@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 
 import App from './App';
-import Create from './components/newHabit';
+
 // import './styles/normalize.css';
 // import './styles/index.css';
 
