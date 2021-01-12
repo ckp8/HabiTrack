@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 
+import './footer.css'
+
 class Footer extends React.Component {
     render() {
         return (
-            <footer>© Created By Charan, Kai, Stelios & Tara</footer>
+            <footer>
+                <p>
+                    © Created By Charan, Kai, Stelios & Tara
+                </p>
+            </footer>
         )
     }
 }

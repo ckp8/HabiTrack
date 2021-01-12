@@ -1,12 +1,12 @@
-#App {
+/* #App {
     display: grid;
     grid-template-rows: 5vh 90vh 5vh;
     position: fixed;
     width: 100vw;
     text-align: center;
-}
+} */
 
-main {
+/* main {
     padding: 10px 0;
     width: 100vw;
     max-height: 95vh;
@@ -49,15 +49,15 @@ ul, ol, li { padding: 0; list-style: none; margin: 0; }
 
 #modal p {
     font-size: 1rem;
-}
+} */
 
-#modal li {
+/* #modal li {
     font-size: 1.2rem;
-}
+} */
 
-.err { color: 'red' }
+/* .err { color: 'red' } */
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
     main {
         max-width: 80vw;
         grid-template-columns: repeat(12, 1fr);
@@ -87,4 +87,4 @@ ul, ol, li { padding: 0; list-style: none; margin: 0; }
     .row-10 { grid-row-end: span 10; }
     .row-11 { grid-row-end: span 11; }
     .row-12 { grid-row-end: span 12; }
-}
+} */
