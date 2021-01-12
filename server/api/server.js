@@ -10,7 +10,6 @@ const usersRoutes = require('./routes/users')
 server.use('/habits', habitsRoutes)
 server.use('/users', usersRoutes)
 
-
 server.get('/', (req, res) => res.send('Welcome'))
 
 module.exports = server
