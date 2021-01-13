@@ -1,16 +1,28 @@
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS habits;
+-- DROP DATABASE IF EXISTS habit;
 
+-- CREATE DATABASE habit;
+
+-- requires uuid-ossp extension
 CREATE TABLE users (
     id serial PRIMARY KEY,
-    username VARCHAR(40) NOT NULL,
-    password VARCHAR(20) NOT NULL
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
 );
 
-DROP TABLE IF EXISTS habits;
+-- dummy data
+INSERT INTO users 
+    (username, email, password)
+VALUES
+    ('test1', 'test1@gmail.com', 'password1234'),
+    ('test2', 'test2@gmail.com', 'password4321')
+;
 
 CREATE TABLE habits (
     id serial PRIMARY KEY,
-    title VARCHAR(20) NOT NULL,
+    title VARCHAR(200) NOT NULL,
     description VARCHAR(200),
     created_on DATE NOT NULL DEFAULT CURRENT_DATE,
     monday BOOLEAN DEFAULT FALSE,
@@ -24,12 +36,6 @@ CREATE TABLE habits (
     user_id INT NOT NULL
 );
 
-INSERT INTO users (username, password)
-VALUES
-(
-    'Test_User',
-    '12345'
-);
 
 INSERT INTO habits (title, description, monday, tuesday, wednesday, thursday, friday, saturday, sunday, completed, user_id)
 VALUES
