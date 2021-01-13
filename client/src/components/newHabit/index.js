@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import {ButtonGroup} from 'react-bootstrap';
 import {ToggleButton} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import "../newHabit.css"
+import "./newHabit.css"
 
 function newHabit() {
   const [checked, setChecked] = useState(false);
@@ -31,7 +31,7 @@ function newHabit() {
         <div className = "textbox">
      <textarea>add description</textarea>
      </div> 
-     </form>
+     
     
       <ButtonGroup toggle>
         {radios.map((radio, idx) => (
@@ -50,6 +50,7 @@ function newHabit() {
       </ButtonGroup>
       <br/>
       <button type = "submit">Submit</button>
+      </form>
       </div>
       </div>
       </div>

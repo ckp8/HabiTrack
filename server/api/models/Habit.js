@@ -42,12 +42,12 @@ module.exports = class Habit {
     static async create(habitData){
         return new Promise (async (resolve, reject) => {
             try {
-                const { title, description, username} = habitData;
+                const { title, description, username, monday, tuesday, wednesday, thursday, friday, saturday, sunday} = habitData;
                 let user = await User.findOrCreateByName(username);
                 let result = await db.run(SQL`INSERT INTO habits
-                                                    (title, description, user_id)
+                                                    (title, description, user_id, monday, tuesday, wednesday, thursday, friday, saturday, sunday)
                                                 VALUES
-                                                    (${title}, ${description}, ${user.id})
+                                                    (${title}, ${description}, ${user.id}, ${monday}, ${tuesday}, ${wednesday}, ${thursday}, ${friday}, ${saturday}, ${sunday})
                                                 RETURNING *`);      //This is probably wrong too
                 resolve (result.rows[0]);
             } catch (err) {
@@ -55,6 +55,22 @@ module.exports = class Habit {
             }
         });
     };
+
+    update(habitData) {
+        return new Promise(async (resolve,reject) => {
+            try {
+                const { description, monday, tuesday, wednesday, thursday, friday, saturday, sunday } = habitData
+                let updatedHabitData = await db.run(SQL`UPDATE habits
+                                                        SET (description, monday, tuesday, wednesday, thursday, friday, saturday, sunday) = (${description}, ${monday}, ${tuesday}, ${wednesday}, ${thursday}, ${friday}, ${saturday}, ${sunday})
+                                                        WHERE id = ${this.id} 
+                                                        RETURNING *`)     //This might be wrong
+                let updatedHabit = new Habit(updatedHabitData.rows[0]);
+                resolve (updatedHabit)
+            } catch(err) {
+                reject ('Error updating habit')
+            }
+        })
+    }
 
     destroy(){
         return new Promise(async(resolve, reject) => {
