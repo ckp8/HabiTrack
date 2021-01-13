@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 // import { toast } from "react-toastify";
+import moment from "moment";
+import TodayHabits from "./TodayHabits";
+import Navbar from "../layout/Navbar";
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
@@ -41,6 +44,8 @@ const Dashboard = ({ setAuth }) => {
       <button onClick={(e) => logout(e)} className="btn btn-primary">
         Logout
       </button>
+      <Navbar />
+      <TodayHabits />
     </div>
   );
 };

@@ -22,4 +22,5 @@ server.use("/dashboard", require("./routes/dashboard"));
 
 server.get("/", (req, res) => res.send("Welcome"));
 
+
 module.exports = server;
