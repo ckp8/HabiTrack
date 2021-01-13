@@ -10,7 +10,7 @@ const authorise = require("../middleware/authorisation");
 router.post("/register", validInfo, async (req, res) => {
   try {
     // destructure the request body - we want username, email and password
-    const { username, email, password } = req.body;
+    const { name, email, password } = req.body;
 
     // check if user exists by referencing emails - these have to be unique
     const user = await pool.query("SELECT * FROM users WHERE email = $1", [
@@ -29,7 +29,7 @@ router.post("/register", validInfo, async (req, res) => {
     // enter the new user inside our database
     let newUser = await pool.query(
       "INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING *",
-      [username, email, bcryptPassword]
+      [name, email, bcryptPassword]
     );
 
     // const printuser = await pool.query("SELECT * FROM users");
