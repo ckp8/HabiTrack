@@ -10,15 +10,27 @@ import "../newHabit.css"
 
 
  function newHabit() {
-  const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState("7");
+  const [checked, setChecked] = useState(true);
+  const [radioValue, setRadioValue] = useState("1");
+  const [description, setDescription] = useState("");
+
+state = {
+  description: "",
+  radioValue: "",
+  checked:false
+}
+
   const handleSubmit = event => {
     event.preventDefault();
     alert('You have submitted the form.')
   }
-
+  updateInput = (e) => {
+    const description = e.target.value;
+    this.setState({ description: description });
+  };
+ 
   const radios = [
-    { name: 'Mon', value: '1' },
+    { name: 'Mon', value: '1' ,select: true},
     { name: 'Tues', value: '2' },
     { name: 'Wed', value: '3' },
     { name: 'Thur', value: '4'},
@@ -38,9 +50,10 @@ import "../newHabit.css"
         <form onSubmit={handleSubmit} >
         <h1>Hello</h1>
         <div className = "textbox">
-     <textarea>add description</textarea>
+     <textarea  onChange={this.updateInput}
+            value={this.state.description}>add description</textarea>
      </div> 
-     </form>
+
     
       <ButtonGroup toggle>
         {radios.map((radio, idx) => (
@@ -59,6 +72,7 @@ import "../newHabit.css"
       </ButtonGroup>
       <br/>
       <button type = "submit">Submit</button>
+      </form>
       </div>
       </div>
       </div>
