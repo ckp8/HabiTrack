@@ -62,8 +62,7 @@ HTML, CSS, JavaScript, React, docker, postgres, Jest, Enjyme, Netlify
 
 In no specific order:
 
-[StylianosThomas](https://github.com/StylianosThomas),
 [TaraHussain](https://github.com/TaraHussain),
 [kail0n](https://github.com/kail0n),
-[ckp88](https://github.com/ckp88)
-
+[ckp88](https://github.com/ckp88),
+[StylianosThomas](https://github.com/StylianosThomas)
