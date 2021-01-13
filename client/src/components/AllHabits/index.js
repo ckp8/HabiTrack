@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class AllHabits extends React.Component {
     render() {
         return (
-            <h1>AllHabits page!</h1>
+            <div>
+                <h1>AllHabits page!</h1>
+            </div>
         )
     }
 }
