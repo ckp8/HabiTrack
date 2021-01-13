@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import {ButtonGroup} from 'react-bootstrap';
 import {ToggleButton} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import "../newHabit.css"
+import "./newHabit.css"
 
 function newHabit() {
   const [checked, setChecked] = useState(false);
