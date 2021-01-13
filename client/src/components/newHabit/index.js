@@ -12,6 +12,10 @@ import "../newHabit.css"
  function newHabit() {
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState("7");
+  const handleSubmit = event => {
+    event.preventDefault();
+    alert('You have submitted the form.')
+  }
 
   const radios = [
     { name: 'Mon', value: '1' },
@@ -23,6 +27,7 @@ import "../newHabit.css"
     { name: 'Sun', value : '7'}
 
   ];
+  
 
   return (
     <>
@@ -30,7 +35,7 @@ import "../newHabit.css"
       <div className ="apple">
       <div className = "container">
         <div className = "child"> 
-        <form>
+        <form onSubmit={handleSubmit} >
         <h1>Hello</h1>
         <div className = "textbox">
      <textarea>add description</textarea>
