@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 // import { toast } from "react-toastify";
 import moment from "moment";
-import TodayHabits from "./TodayHabits";
+// import TodayHabits from "./TodayHabits";
 import Navbar from "../layout/Navbar";
+import { Switch, Route } from "react-router-dom";
+import { TodayHabits, AllHabits, Achievements } from "./";
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
@@ -45,7 +47,9 @@ const Dashboard = ({ setAuth }) => {
         Logout
       </button>
       <Navbar />
-      <TodayHabits />
+      <Route path="dashboard/today" component={TodayHabits} />
+      <Route path="dashboard/all" component={AllHabits} />
+      <Route path="dashboard/achievements" component={Achievements} />
     </div>
   );
 };
