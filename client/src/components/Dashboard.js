@@ -14,7 +14,7 @@ const Dashboard = ({ setAuth }) => {
 
   const getProfile = async () => {
     try {
-      const res = await fetch("http://localhost:3000/dashboard/", {
+      const res = await fetch("http://localhost:3000/dashboard/name", {
         method: "GET",
         headers: { token: localStorage.token },
       });

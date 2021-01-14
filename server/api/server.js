@@ -15,6 +15,9 @@ server.use("/auth", require("./routes/jwtAuth"));
 //dashboard
 server.use("/dashboard", require("./routes/dashboard"));
 
+// server.use("/habits", require("./routes/dashboard"));
+// server.use("/", require("./routes/dashboard"));
+
 const habitsRoutes = require("./routes/habits");
 const usersRoutes = require("./routes/users");
 
