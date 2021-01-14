@@ -10,6 +10,7 @@ import {
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
+import { Header, Footer } from "./layout";
 import { TodayHabits } from "./components";
 
 // toast.configure();
@@ -42,44 +43,48 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <Switch>
-        <Route
-          exact
-          path="/login"
-          render={(props) =>
-            !isAuthenticated ? (
-              <Login {...props} setAuth={setAuth} />
-            ) : (
-              <Redirect to="/dashboard" />
-            )
-          }
-        />
-        <Route
-          exact
-          path="/register"
-          render={(props) =>
-            !isAuthenticated ? (
-              <Register {...props} setAuth={setAuth} />
-            ) : (
-              <Redirect to="/login" />
-            )
-          }
-        />
-        <Route
-          exact
-          path="/dashboard"
-          render={(props) =>
-            isAuthenticated ? (
-              <Dashboard {...props} setAuth={setAuth} />
-            ) : (
-              <Redirect to="/login" />
-            )
-          }
-        />
-        {/* <Route path="/habit" render={() => <TodayHabits />} /> */}
-      </Switch>
-    </div>
+    <>
+      <Header />
+      <div className="container">
+        <Switch>
+          <Route
+            exact
+            path="/login"
+            render={(props) =>
+              !isAuthenticated ? (
+                <Login {...props} setAuth={setAuth} />
+              ) : (
+                <Redirect to="/dashboard" />
+              )
+            }
+          />
+          <Route
+            exact
+            path="/register"
+            render={(props) =>
+              !isAuthenticated ? (
+                <Register {...props} setAuth={setAuth} />
+              ) : (
+                <Redirect to="/login" />
+              )
+            }
+          />
+          <Route
+            exact
+            path="/dashboard"
+            render={(props) =>
+              isAuthenticated ? (
+                <Dashboard {...props} setAuth={setAuth} />
+              ) : (
+                <Redirect to="/login" />
+              )
+            }
+          />
+          {/* <Route path="/habit" render={() => <TodayHabits />} /> */}
+        </Switch>
+      </div>
+      <Footer />
+    </>
   );
 
   // import { Switch, Route, Redirect} from 'react-router-dom';
