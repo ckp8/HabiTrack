@@ -18,9 +18,8 @@ module.exports = class Habit {
         let habitData = await db.run(
           SQL`SELECT id, title, user_id FROM habits`
         );
-        // let habits = habitData.rows.map((b) => new Habit(b));
-        // console.log(habits);
-        // resolve(habits);
+        let habits = habitData.rows.map((b) => new Habit(b));
+        resolve(habits);
       } catch (err) {
         reject("Habit not found");
       }
