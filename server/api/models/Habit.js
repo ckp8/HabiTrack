@@ -20,9 +20,9 @@ module.exports = class Habit {
         );
         // let habits = habitData.rows.map((b) => new Habit(b));
         // console.log(habits);
-        resolve.json(habitData);
+        // resolve(habits);
       } catch (err) {
-        reject("Habit not found 1");
+        reject("Habit not found");
       }
     });
   }

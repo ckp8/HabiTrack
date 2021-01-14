@@ -3,7 +3,7 @@ const router = express.Router();
 const habitsController = require("../controllers/habits");
 const authorise = require("../middleware/authorisation");
 
-router.get("/", authorise, habitsController.index);
+router.get("/", habitsController.index);
 router.get("/:id", habitsController.show);
 router.post("/", habitsController.create);
 router.patch("/:id", habitsController.update);
