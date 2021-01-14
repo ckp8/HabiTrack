@@ -1,5 +1,5 @@
 module.exports = (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { name, email, password } = req.body;
 
   // testing if email follows correct pattern
   function validEmail(userEmail) {
@@ -7,7 +7,8 @@ module.exports = (req, res, next) => {
   }
 
   if (req.path === "/register") {
-    if (![username, email, password].every(Boolean)) {
+    if (![name, email, password].every(Boolean)) {
+      console.log(name + " " + email + " " + password);
       return res.status(401).json("Fill all fields");
     } else if (!validEmail(email)) {
       return res.status(401).json("Invalid Email");
