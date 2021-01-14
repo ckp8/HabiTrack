@@ -42,43 +42,37 @@ const Dashboard = ({ setAuth }) => {
     getProfile();
   }, []);
 
-  const [modalState1, setModalState1] = useState(false);
+  const [state, setState] = useState();
 
-  const manageState1 = () => {
-    setModalState1(!modalState1);
+  const currentState = (modal) => {
+    setState(modal);
   };
 
-  const [modalState2, setModalState2] = useState(false);
-
-  const manageState2 = () => {
-    setModalState2(!modalState2);
-  };
-
-  const [modalState3, setModalState3] = useState(false);
-
-  const manageState3 = () => {
-    setModalState3(!modalState3);
+  const display = () => {
+    switch (state) {
+      case "modal1":
+        return <TodayHabits />;
+      case "modal2":
+        return <AllHabits />;
+      case "modal3":
+        return <Achievements />;
+      default:
+        return <TodayHabits />;
+    }
   };
 
   return (
     <div className="dashboard">
-      <h1 className="mt-5">Dashboard</h1>
-      <h2>Welcome {name}</h2>
+      <h1 className="mt-5">
+        Welcome {name.charAt(0).toUpperCase() + name.slice(1)}
+      </h1>
       <button onClick={(e) => logout(e)} className="btn btn-primary">
         Logout
       </button>
-      <button onClick={() => manageState1()}>Today's Habits</button>
-      <button onClick={() => manageState2()}>All Habits</button>
-      <button onClick={() => manageState3()}>Achievements</button>
-      <div className={`modalBackground modalShowing-${modalState1}`}>
-        {<TodayHabits />}
-      </div>
-      <div className={`modalBackground modalShowing-${modalState2}`}>
-        {<AllHabits />}
-      </div>
-      <div className={`modalBackground modalShowing-${modalState3}`}>
-        {<Achievements />}
-      </div>
+      <button onClick={() => currentState("modal1")}>Today's Habits</button>
+      <button onClick={() => currentState("modal2")}>All Habits</button>
+      <button onClick={() => currentState("modal3")}>Achievements</button>
+      <div>{display()}</div>
     </div>
   );
 };
