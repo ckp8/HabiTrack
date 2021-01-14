@@ -25,8 +25,9 @@ class Achievements extends React.Component {
 
     render() {
         return (
-            <div id='habits'>
+            <div id='habits'>   
                 <h1>Achievements page!</h1>
+                <h2> CHECK IF RENDERS </h2>
                 {this.state.habits.map((habit) => {
                     return (
                         <div className='habit-container'>
