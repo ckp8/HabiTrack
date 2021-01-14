@@ -1,13 +1,28 @@
-import React, {Component,useState} from 'react';
+import React, {Component,useState,useReducer} from 'react';
 import Button from 'react-bootstrap/Button';
 import {ButtonGroup} from 'react-bootstrap';
 import {ToggleButton} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import "./newHabit.css"
 
+ 
+const formReducer = (state, event) => {
+  return {
+    ...state,
+    [event.description]: event.value
+  }
+ }
+ 
+
 function newHabit() {
+  state = {
+    description: "",
+    radioValue: "",
+    checked: false
+  }
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState("7");
+  const [formData, setFormData] = useReducer(formReducer, {});
 
   const radios = [
     { name: 'Mon', value: '1' },
@@ -20,16 +35,36 @@ function newHabit() {
 
   ];
 
+  const handleChange = event => {
+    setFormData({
+      name: event.target.description,
+      value: event.target.value,
+    });
+  }
+
   return (
    
     
       <div className ="apple">
       <div className = "container">
         <div className = "child"> 
-        <form>
+        
         <h1>Hello</h1>
+
+        {submitting &&
+        <div>
+          You are submitting the following:
+          <ul>
+            {Object.entries(formData).map(([description, value]) => (
+              <li key={description}><strong>{description}</strong>: {value.toString()}</li>
+            ))}
+          </ul>
+        </div>
+      }
+
+        <form>
         <div className = "textbox">
-     <textarea>add description</textarea>
+     <textarea name= "name" onChange ={handleChange}>add description</textarea>
      </div> 
      
     
