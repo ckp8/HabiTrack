@@ -5,7 +5,6 @@ import {ToggleButton} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import "./newHabit.css"
 
- 
 const formReducer = (state, event) => {
   return {
     ...state,
@@ -95,9 +94,4 @@ function newHabit() {
 }
 
 
-
-
-
-    
-    
 export default newHabit;
