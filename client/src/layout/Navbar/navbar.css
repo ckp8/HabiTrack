@@ -1,17 +1,15 @@
-header {
+#buttonContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     background: #A1B9E8;
-    margin: 0;
-    padding: 0
+
 }
 
-h1 {
+button {
     font-family: 'Lobster';
 }
 
-p {
-    font-family: 'Roboto' ;
+button:hover {
+    font-weight: bold;
 }

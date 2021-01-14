@@ -37,7 +37,7 @@ CREATE TABLE habits (
 );
 
 
-INSERT INTO habits (title, description, monday, tuesday, wednesday, thursday, friday, saturday, sunday, completed, user_id)
+INSERT INTO habits (title, description, monday, tuesday, wednesday, thursday, friday, saturday, sunday, times_completed, user_id)
 VALUES
 (
     'Test Habit 1',

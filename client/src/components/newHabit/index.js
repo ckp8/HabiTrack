@@ -31,7 +31,7 @@ function newHabit() {
         <div className = "textbox">
      <textarea>add description</textarea>
      </div> 
-     </form>
+     
     
       <ButtonGroup toggle>
         {radios.map((radio, idx) => (
@@ -50,6 +50,7 @@ function newHabit() {
       </ButtonGroup>
       <br/>
       <button type = "submit">Submit</button>
+      </form>
       </div>
       </div>
       </div>
