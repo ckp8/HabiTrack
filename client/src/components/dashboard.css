@@ -7,4 +7,5 @@
 .modalShowing-true {
   opacity: 1;
   pointer-events: showing;
+  position: absolute;
 }

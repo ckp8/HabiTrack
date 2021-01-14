@@ -23,5 +23,4 @@ server.use("/users", usersRoutes);
 
 server.get("/", (req, res) => res.send("Welcome"));
 
-
 module.exports = server;
