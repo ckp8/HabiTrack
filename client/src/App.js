@@ -45,8 +45,9 @@ class App extends React.Component {
                     <LoggedOutRoute path="/register" isLoggedIn={this.state.isLoggedIn} login={this.login} component={Registration} />
                     <PrivateRoute path="/habit" isLoggedIn={this.state.isLoggedIn} component={TodayHabits} />
                     <PrivateRoute path="/all-habits" isLoggedIn={this.state.isLoggedIn} component={AllHabits} />
-                    <PrivateRoute path="/achievements" isLoggedIn={this.state.isLoggedIn} component={Achievements} />
                     <PrivateRoute path ="/create" isLoggedIn={this.state.isLoggedIn} component={newHabit}/>
+                    <PrivateRoute path="/achievements" isLoggedIn={this.state.isLoggedIn} component={Achievements} />
+                    
                     <Route path="/*" component={NotFound} />
                 </Switch>
                 </main>
