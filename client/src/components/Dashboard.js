@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 // import { toast } from "react-toastify";
-import moment from "moment";
-// import TodayHabits from "./TodayHabits";
-import Navbar from "../layout/Navbar";
-import { Switch, Route } from "react-router-dom";
-import { TodayHabits, AllHabits, Achievements } from "./";
+// import moment from "moment";
+// import Navbar from "../layout/Navbar";
+// import { Switch, Route } from "react-router-dom";
+import TodayHabits from "./TodayHabits";
+import AllHabits from "./AllHabits";
+import Achievements from "./Achievements";
+import "./dashboard.css";
+// import Modal from "react-modal";
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
@@ -39,17 +42,43 @@ const Dashboard = ({ setAuth }) => {
     getProfile();
   }, []);
 
+  const [modalState1, setModalState1] = useState(false);
+
+  const manageState1 = () => {
+    setModalState1(!modalState1);
+  };
+
+  const [modalState2, setModalState2] = useState(false);
+
+  const manageState2 = () => {
+    setModalState2(!modalState2);
+  };
+
+  const [modalState3, setModalState3] = useState(false);
+
+  const manageState3 = () => {
+    setModalState3(!modalState3);
+  };
+
   return (
-    <div>
+    <div className="dashboard">
       <h1 className="mt-5">Dashboard</h1>
       <h2>Welcome {name}</h2>
       <button onClick={(e) => logout(e)} className="btn btn-primary">
         Logout
       </button>
-      <Navbar />
-      <Route path="dashboard/today" component={TodayHabits} />
-      <Route path="dashboard/all" component={AllHabits} />
-      <Route path="dashboard/achievements" component={Achievements} />
+      <button onClick={() => manageState1()}>Today's Habits</button>
+      <button onClick={() => manageState2()}>All Habits</button>
+      <button onClick={() => manageState3()}>Achievements</button>
+      <div className={`modalBackground modalShowing-${modalState1}`}>
+        {<TodayHabits />}
+      </div>
+      <div className={`modalBackground modalShowing-${modalState2}`}>
+        {<AllHabits />}
+      </div>
+      <div className={`modalBackground modalShowing-${modalState3}`}>
+        {<Achievements />}
+      </div>
     </div>
   );
 };
