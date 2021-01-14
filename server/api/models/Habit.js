@@ -70,30 +70,41 @@ module.exports = class Habit {
     });
   }
 
-  update(habitData) {
-    return new Promise(async (resolve, reject) => {
-      try {
-        const {
-          description,
-          monday,
-          tuesday,
-          wednesday,
-          thursday,
-          friday,
-          saturday,
-          sunday,
-        } = habitData;
-        let updatedHabitData = await db.run(SQL`UPDATE habits
-                                                        SET (description, monday, tuesday, wednesday, thursday, friday, saturday, sunday) = (${description}, ${monday}, ${tuesday}, ${wednesday}, ${thursday}, ${friday}, ${saturday}, ${sunday})
-                                                        WHERE id = ${this.id} 
-                                                        RETURNING *`); //This might be wrong
-        let updatedHabit = new Habit(updatedHabitData.rows[0]);
-        resolve(updatedHabit);
-      } catch (err) {
-        reject("Error updating habit");
-      }
-    });
-  }
+
+    // update(habitData) {
+    //     return new Promise(async (resolve,reject) => {
+    //         try {
+    //             const { description, monday, tuesday, wednesday, thursday, friday, saturday, sunday } = habitData
+    //             let updatedHabitData = await db.run(SQL`UPDATE habits
+    //                                                     SET (description = ${description} 
+    //                                                         monday = ${monday}
+    //                                                         tuesday = ${tuesday}
+    //                                                         wednesday = ${wednesday}
+    //                                                         thursday = ${thursday}
+    //                                                         friday = ${friday}
+    //                                                         saturday = ${saturday}
+    //                                                         sunday =  ${sunday})
+    //                                                     WHERE id = ${this.id} 
+    //                                                     RETURNING *`)    //This might be wrong
+    //             let updatedHabit = new Habit(updatedHabitData.rows[0]);
+    //             resolve (updatedHabit)
+    //         } catch(err) {
+    //             reject ('Error updating habit')
+    //         }
+    //     })
+    // }
+
+    // updateCounter() {
+    //     return new Promise (async (resolve, reject) => {
+    //         try {
+    //             let updatedHabitCounterData = await db.run(SQL`UPDATE habits SET times_completed = times_completed + 1 WHERE id = ${this.id} RETURNING *`)
+    //             let updatedHabitCounter = new Habit(updatedHabitCounterData.rows[0])
+    //             resolve(updatedHabitCounter)
+    //         } catch(err) {
+    //             reject('Error updating habit counter')
+    //         }
+    //     })
+    // }
 
   destroy() {
     return new Promise(async (resolve, reject) => {

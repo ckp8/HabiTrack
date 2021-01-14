@@ -17,6 +17,7 @@ server.use("/dashboard", require("./routes/dashboard"));
 
 const habitsRoutes = require("./routes/habits");
 const usersRoutes = require("./routes/users");
+
 server.use("/habits", habitsRoutes);
 server.use("/users", usersRoutes);
 
