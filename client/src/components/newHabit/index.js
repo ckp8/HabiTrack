@@ -23,7 +23,7 @@ function newHabit() {
   const [radioValue, setRadioValue] = useState("7");
   const [formData, setFormData] = useReducer(formReducer, {});
 
-  const radios = [
+  const checkbox = [
     { name: 'Mon', value: '1' },
     { name: 'Tues', value: '2' },
     { name: 'Wed', value: '3' },
@@ -68,12 +68,12 @@ function newHabit() {
      
     
       <ButtonGroup toggle>
-        {radios.map((radio, idx) => (
+        {checkbox.map((checkbox, idx) => (
           <ToggleButton
             key={idx}
-            type="radio"
+            type="checkbox"
             variant="secondary"
-            name="radio"
+            name="checkbox"
             value={radio.value}
             checked={radioValue === radio.value}
             onChange={(e) => setRadioValue(e.currentTarget.value)}
@@ -83,6 +83,7 @@ function newHabit() {
         ))}
       </ButtonGroup>
       <br/>
+      <button>check all</button>
       <button type = "submit">Submit</button>
       </form>
       </div>
