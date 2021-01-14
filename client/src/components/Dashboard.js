@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import TodayHabits from "./TodayHabits";
 import AllHabits from "./AllHabits";
 import Achievements from "./Achievements";
-import newHabit from "./newHabit";
+import NewHabit from "./NewHabit";
 import "./dashboard.css";
 // import Modal from "react-modal";
 
@@ -58,7 +58,7 @@ const Dashboard = ({ setAuth }) => {
       case "modal3":
         return <Achievements />;
       case "modal4":
-          return <newHabit />;
+          return <NewHabit />;
       default:
         return <TodayHabits />;
     }

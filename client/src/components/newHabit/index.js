@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import {ButtonGroup} from 'react-bootstrap';
 import {ToggleButton} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import "./newHabit.css"
 
 const formReducer = (state, event) => {
   return {
@@ -13,12 +12,12 @@ const formReducer = (state, event) => {
  }
  
 
-function newHabit() {
-  state = {
-    description: "",
-    radioValue: "",
-    checked: false
-  }
+function NewHabit() {
+//   state = {
+//     description: "",
+//     radioValue: "",
+//     checked: false
+//   }
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState("7");
   const [formData, setFormData] = useReducer(formReducer, {});
@@ -49,8 +48,7 @@ function newHabit() {
         <div className = "child"> 
         
         <h1>Hello</h1>
-
-        {submitting &&
+        
         <div>
           You are submitting the following:
           <ul>
@@ -59,7 +57,6 @@ function newHabit() {
             ))}
           </ul>
         </div>
-      }
 
         <form>
         <div className = "textbox">
@@ -95,4 +92,4 @@ function newHabit() {
 }
 
 
-export default newHabit;
+export default NewHabit;
