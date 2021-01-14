@@ -1,0 +1,22 @@
+:root {
+    --primary: #FFFFFF;
+    --secondary: rgb(5,2,25);
+    --accent:    #A1B9E8;
+    ;
+    --text-primary: var(--primary);
+    --text-secondary: var(--secondary);
+    --text-accent:  var(--primary);
+    --font-primary: 'Montserrat', sans-serif;
+    --font-accent: 'Quicksand', sans-serif;;
+    --opacity: rgba(255,255,255,0.3);
+}
+
+* { box-sizing: border-box; }
+
+html, body { 
+    height: 100%;
+    margin: 0;
+    font-family: var(--font-primary);
+}
+
+a { text-decoration: none; }

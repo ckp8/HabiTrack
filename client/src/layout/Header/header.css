@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: #A1B9E8;
+    margin: 0;
+    padding: 20px 10px}
+
+h1 {
+    font-family: 'Lobster';
+}
+
+p {
+    font-family: 'Roboto' ;
+}

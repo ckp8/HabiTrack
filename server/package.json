@@ -1,5 +1,5 @@
 {
-  "name": "server-postgresql",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -22,8 +22,13 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "node-sass": "^5.0.0",
     "pg": "^8.3.3",
     "sql-template-strings": "^2.2.2"
   }

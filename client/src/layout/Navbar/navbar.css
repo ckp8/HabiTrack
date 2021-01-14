@@ -1,0 +1,15 @@
+#buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #A1B9E8;
+
+}
+
+button {
+    font-family: 'Lobster';
+}
+
+button:hover {
+    font-weight: bold;
+}
