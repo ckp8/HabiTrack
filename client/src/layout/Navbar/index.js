@@ -8,7 +8,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <div id="buttonContainer">
-        <button
+        <button className = "apple"
           onClick={() => {
             <Link to={"/dashboard/today"} />;
           }}
@@ -19,7 +19,7 @@ class Navbar extends React.Component {
 
         <Link to={"/dashboard/all"}> All Habits </Link>
 
-        <button>{<Link to={"/dashboard/achievements"} />}Achievements</button>
+        <button className = "achieve">{<Link to={"/dashboard/achievements"} />}Achievements</button>
       </div>
     );
   }
