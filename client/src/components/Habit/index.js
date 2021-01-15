@@ -7,14 +7,15 @@ class Habit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: props.habitID,
-      title: props.title,
+      id: this.props.habitID,
+      title: this.props.title,
       is_checked: false,
     };
+    this.toggleStatus = this.toggleStatus.bind(this)
   }
 
   toggleStatus() {
-    this.setState({ is_checked: !this.state.is_checked });
+      this.setState( {is_checked: !this.state.is_checked} )
   }
 
   //     async fetchHabits(id) {
