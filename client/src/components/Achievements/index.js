@@ -11,6 +11,7 @@ class Achievements extends React.Component {
     this.fetchHabits(this.state.user_id);
   }
 
+
   //should fetch all habits of user
   async fetchHabits(id) {
     try {
@@ -22,6 +23,7 @@ class Achievements extends React.Component {
       this.setState({ habits: data });
     } catch (err) {
       throw new Error(err.message);
+
     }
   }
 

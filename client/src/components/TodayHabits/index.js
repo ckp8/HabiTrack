@@ -19,6 +19,7 @@ class TodayHabits extends React.Component {
     this.fetchHabits(this.state.user_id);
   }
 
+
   //   getProfile = async () => {
   //     try {
   //       const res = await fetch("http://localhost:3000/dashboard/name", {
@@ -41,6 +42,7 @@ class TodayHabits extends React.Component {
         method: "GET",
         headers: { token: localStorage.token },
       });
+
 
       const data = await resp.json();
       if (data.status === 500) {
