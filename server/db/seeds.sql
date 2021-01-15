@@ -64,4 +64,17 @@ VALUES
     TRUE,
     4,
     1
+),
+(
+    'Test Habit 3',
+    'My 3rd habit with this app',
+    FALSE,
+    TRUE,
+    FALSE,
+    TRUE,
+    FALSE,
+    FALSE,
+    TRUE,
+    4,
+    2
 );

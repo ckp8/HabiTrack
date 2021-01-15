@@ -9,32 +9,14 @@ class TodayHabits extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_id: this.user_id,
+      user_id: this.props.userID,
       dailyHabits: [],
     };
   }
 
   componentDidMount() {
-    console.log(this.state);
     this.fetchHabits(this.state.user_id);
   }
-
-
-  //   getProfile = async () => {
-  //     try {
-  //       const res = await fetch("http://localhost:3000/dashboard/name", {
-  //         method: "GET",
-  //         headers: { token: localStorage.token },
-  //       });
-
-  //       const parseData = await res.json();
-  //       // setName(parseData.username);
-  //       // setUser_id(parseData.id);
-  //       this.setState({ user_id: parseData.id });
-  //     } catch (err) {
-  //       console.error(err.message);
-  //     }
-  //   };
 
   async fetchHabits(id) {
     try {
@@ -42,14 +24,11 @@ class TodayHabits extends React.Component {
         method: "GET",
         headers: { token: localStorage.token },
       });
-
-
       const data = await resp.json();
       if (data.status === 500) {
         throw Error("Habits not found");
       }
       this.setState({ dailyHabits: data });
-      console.log(data);
     } catch (err) {
       throw new Error(err.message);
     }
@@ -60,8 +39,7 @@ class TodayHabits extends React.Component {
 
   render() {
     const renderhabits = this.state.dailyHabits.map((habit) => {
-      // let habitID = habit.habit_id;
-      // let habitTitlte = habit.title;
+        console.log(habit)
       return (
         <div key={habit.habit_id}>
           <Habit title={habit.title} habitID={habit.habit_id} />

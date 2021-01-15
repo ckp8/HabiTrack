@@ -12,7 +12,7 @@ import "./dashboard.css";
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
-  const [user_id, setUser_id] = useState();
+  const [user_id, setUser_id] = useState("");
 
   const getProfile = async () => {
     try {
@@ -22,7 +22,7 @@ const Dashboard = ({ setAuth }) => {
       });
 
       const parseData = await res.json();
-      // console.log(parseData);
+    //   console.log(parseData);
       setName(parseData.username);
       setUser_id(parseData.id);
     } catch (err) {
@@ -46,6 +46,8 @@ const Dashboard = ({ setAuth }) => {
   }, []);
 
   const [state, setState] = useState();
+//   const potato = user_id;
+//   console.log("potato is: ", potato)
 
   const currentState = (modal) => {
     setState(modal);
@@ -54,15 +56,15 @@ const Dashboard = ({ setAuth }) => {
   const display = () => {
     switch (state) {
       case "modal1":
-        return <TodayHabits user_id={user_id} />;
+        return <TodayHabits userID={user_id} />;
       case "modal2":
-        return <AllHabits user_id={user_id} />;
+        return <AllHabits userID={user_id} />;
       case "modal3":
-        return <Achievements user_id={user_id} />;
+        return <Achievements userID={user_id} />;
       case "modal4":
-        return <AddHabit user_id={user_id} />;
+        return <AddHabit userID={user_id} />;
       default:
-        return <TodayHabits user_id={user_id} />;
+        return <TodayHabits userID={user_id} />;
     }
   };
 
