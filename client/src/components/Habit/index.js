@@ -11,20 +11,13 @@ class Habit extends React.Component {
     }
 
     toggleStatus () {
-        if (this.state.is_checked === false) {
-            this.setState.is_checked = true;
-            //api call to server here to increase habit's streak
-            // probably need a new UPDATE route
-        } else {
-            this.setState.is_checked = false;
-            //api call to server here to decrease habit's streak
-        }
+        this.setState({ is_checked: !this.state.is_checked });
     }
 
     render() {
         return (
             <div id='habit'>
-                <input type='checkbox' name='completed' checked={ this.state.is_checked } onClick={ this.toggleStatus } />
+                <input type='checkbox' name='completed' checked={ this.state.is_checked } onChange={ this.toggleStatus } />
                 <h2> {this.state.title} </h2>
                 <button onClick={() => { this.props.history.push(`/editHabit/${this.state.id}`) }}> Edit </button>
             </div>

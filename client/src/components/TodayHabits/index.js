@@ -19,8 +19,8 @@ class TodayHabits extends React.Component {
         try {
             const resp = await fetch('localhost:3000/habits')
             const data = await resp.json()
-            if (data.status === 500){ throw Error('Habits not found')}
-                this.setState({ dailyHabitshabits : data })
+            if (data.status === 500){ throw Error('Habits not found') }
+            this.setState({ dailyHabits: data })
         } catch(err) {
             throw new Error(err.message)
         }
@@ -33,7 +33,7 @@ class TodayHabits extends React.Component {
         const renderhabits = this.state.dailyHabits.map( habit => {
             return (
                 <div key={habit.id}>
-                    <Habit habitId={habit.id} habitTitle={habit.title}/>
+                    <Habit habit={habit.id, habit.title} />
                 </div>
             )
         })
