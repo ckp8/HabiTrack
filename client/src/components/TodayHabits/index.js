@@ -17,7 +17,7 @@ class TodayHabits extends React.Component {
 
     async fetchHabits(id) {
         try {
-            const resp = await fetch('localhost:3000/habits')
+            const resp = await fetch('http://localhost:3000/habits')
             const data = await resp.json()
             if (data.status === 500){ throw Error('Habits not found') }
             this.setState({ dailyHabits: data })
