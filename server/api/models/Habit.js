@@ -8,37 +8,45 @@ module.exports = class Habit {
     this.id = data.id;
     this.title = data.title;
     this.description = data.description;
-    this.abstract = data.abstract;
+    // this.abstract = data.abstract;
     this.user = { username: data.username, path: `/users/${data.user_id}` };
   }
 
-  static get all() {
-    return new Promise(async (resolve, reject) => {
-      try {
-        let habitData = await db.run(
-          SQL`SELECT id, title, user_id FROM habits`
-        );
-        let habits = habitData.rows.map((b) => new Habit(b));
-        resolve(habits);
-      } catch (err) {
-        reject("Habit not found");
-      }
-    });
+  static async all(req, res) {
+    try {
+      let habitData = await db.query("SELECT id, title, user_id FROM habits");
+      //res.json(habit.rows);
+      let habits = habitData.rows.map((b) => new Habit(b));
+      res.json(habits);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server error");
+    }
+    // return new Promise(async (resolve, reject) => {
+    //   try {
+    //     let habitData = await db.run(
+    //       SQL`SELECT id, title, user_id FROM habits`
+    //     );
+    //     let habits = habitData.rows.map((b) => new Habit(b));
+    //     resolve(habits);
+    //   } catch (err) {
+    //     reject("Habit not found");
+    //   }
+    // });
   }
 
-  static findById(id) {
-    return new Promise(async (resolve, reject) => {
-      try {
-        let habitData = await db.run(SQL`SELECT habits.*, users.username as username
-                                                    FROM habits
-                                                    JOIN users ON users.id = habits.user_id
-                                                    WHERE habits.id = ${id};`); //This is probably wrong
-        let habit = new Habit(habitData.rows[0]);
-        resolve(habit);
-      } catch (err) {
-        reject("Habit not found");
-      }
-    });
+  static async findById(req, res) {
+    try {
+      let id = req.params.id;
+      const habit = await db.query(
+        "SELECT habits.*, users.username as username FROM habits JOIN users ON users.id = habits.user_id WHERE habits.id = $1;",
+        [id]
+      );
+      res.json(habit.rows);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server error");
+    }
   }
 
   static async create(habitData) {
