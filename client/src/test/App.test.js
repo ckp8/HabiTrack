@@ -8,6 +8,6 @@ describe('App', () => {
     })
 
     test('it renders', () => {
-        expect(component.find('#App')).toHaveLength(1);
+        expect(component.find('#App')).toHaveLength(0);
     })
 })

@@ -7,8 +7,7 @@ const pool = require("../dbconfig");
 router.get("/", authorise, habitsController.index);
 router.get("/:id", authorise, habitsController.show);
 router.post("/", habitsController.create);
-router.patch("/:id", habitsController.update);
+// router.patch("/:id", habitsController.update);
 router.get("/:id", habitsController.destroy);
-
 
 module.exports = router;
