@@ -1,6 +1,5 @@
-/* .apple {
-    background-color: lavender;
-} */
+
+
 .container {
     display: flex;
     justify-content: center;
@@ -13,7 +12,10 @@
     transform: translateY(-50%); */
 
   }
+.textarea{
+    width: 350px;
 
+}
   /* .child {
     position: absolute;
     top: 50%;

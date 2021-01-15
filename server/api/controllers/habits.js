@@ -77,6 +77,26 @@ async function update(req, res) {
 }
 // ***************** END *****************
 
+// async function update (req, res) {
+//     try {
+//         const habit = await Habit.findById(parseInt(req.params.id))
+//         const updatedHabit = await habit.update(req.body.description, req.body.monday, req.body.tuesday, req.body.wednesday, req.body.thursday, req.body.friday, req.body.saturday, req.body.sunday)
+//         res.json({ habit : updatedHabit})
+//     } catch(err) {
+//         res.status(500).json(err)
+//     }
+// }
+
+// async function updateCounter (req, res) {
+//     try {
+//         const habit = await Habit.findById(parseInt(req.params.id))
+//         const updatedCounter = await habit.updateCounter(req.body)
+//         res.json({ habit : updatedCounter})
+//     } catch(err) {
+//         res.status(500).json(err)
+//     }
+// }
+
 async function destroy(req, res) {
   try {
     const habit = await Habit.findById(parseInt(req.params.id));
