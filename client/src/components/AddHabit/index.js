@@ -56,11 +56,14 @@ class AddHabit extends React.Component {
         e.preventDefault();
         const options = {
             method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(this.state.habitData)  // does this need to be an object?
+            headers: { 
+                "Content-Type": "application/json",
+                token: localStorage.token
+            },
+            body: JSON.stringify(this.state)  // does this need to be an object?
         }
 
-        fetch('http://localhost:3000/dashboard/create', options)    //route might be wrong
+        fetch('http://localhost:3000/habits', options)    //route might be wrong
             .then(r => r.json())
             .then(resp => {
                 console.log('resp is', resp)
