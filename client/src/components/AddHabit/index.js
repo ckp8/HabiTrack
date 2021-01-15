@@ -1,18 +1,34 @@
 import React from 'react';
 
 class AddHabit extends React.Component {
-    state = {
-        user_id : this.props.user_id,
-        title: "",
-        description: "",
-        monday: false,
-        tuesday: false,
-        wednesday: false,
-        thursday: false,
-        friday: false,
-        saturday: false,
-        sunday: false,
+    constructor(props) {
+        super(props);
+        this.state = {
+            user_id: this.props.userID,
+            title: "",
+            description: "",
+            monday: false,
+            tuesday: false,
+            wednesday: false,
+            thursday: false,
+            friday: false,
+            saturday: false,
+            sunday: false,
+        }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
+    // state = {
+    //     user_id : this.props.user_id,
+    //     title: "",
+    //     description: "",
+    //     monday: false,
+    //     tuesday: false,
+    //     wednesday: false,
+    //     thursday: false,
+    //     friday: false,
+    //     saturday: false,
+    //     sunday: false,
+    // }
 
     handleCheck = e => {
         switch ( e.target.name) {
@@ -52,8 +68,9 @@ class AddHabit extends React.Component {
         this.setState({ description: inputDescription })
     }
 
-    handleSubmit = e => {
+    handleSubmit (e) {
         e.preventDefault();
+        console.log(this.state)
         const options = {
             method: 'POST',
             headers: { 
@@ -69,10 +86,10 @@ class AddHabit extends React.Component {
                 console.log('resp is', resp)
                 const {id, err} = resp;
                 if(err) { throw Error(err) }
-                else {history.push("/dashboard")}   //how to change history
+                // else {history.push("/dashboard")}   //how to change history
             })
             // .catch(err => console.log('oops', err.message))
-            .catch(err => setAlert(err.message))
+            // .catch(err => setAlert(err.message))
     }
 
     render() {
@@ -96,7 +113,7 @@ class AddHabit extends React.Component {
                     <label htmlFor="saturday"> Saturday </label><br/>
                     <input type="checkbox" id="sunday" name="sunday" value="sunday" checked={this.state.sunday} onChange={this.handleCheck} />
                     <label htmlFor="sunday"> Sunday </label><br/>
-                    <input type='submit' onSubmit={this.handleSubmit} />
+                    <input type='submit' onClick={this.handleSubmit} />
                 </form>
             </div>
         )
