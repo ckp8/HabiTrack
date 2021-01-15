@@ -51,7 +51,7 @@ class TodayHabits extends React.Component {
       <div id="dailyHabits">
         {moment().format("dddd")}, <br />
         {moment().format("Do MMMM YYYY")} <br />
-        {moment().format("MMMM Do YYYY, h:mm:ss a")} <br />
+        {/* {moment().format("MMMM Do YYYY, h:mm:ss a")} <br /> */}
         {renderhabits}
         {/* <button onClick={() => { history.push(`/newHabit`); }} > Add a habit! </button> */}
       </div>
