@@ -1,22 +1,21 @@
-const User = require('../models/User');
+const User = require("../models/User");
+const db = require("../dbconfig");
 
 async function index(req, res) {
-    try {
-        const user = await User.all;
-        res.json(user);
-    } catch (err) {
-        res.status(500).send(err);
-    };
+  User.all(req, res);
+  // try {
+  //     const user = await User.all;
+  //     res.json(user);
+  // } catch (err) {
+  //     res.status(500).send(err);
+  // };
 }
 
 async function show(req, res) {
-    try {
-        const user = await User.findById(req.params.id);
-        const habits = await user.habits;
-        res.json({ ...user, habits });
-    } catch (err) {
-        res.status(500).send(err);
-    };
+  //let user = User.findById(req, res);
+  let habit = User.habits(req, res);
+  //const result = Object.assign({}, user, habit);
+  // return habit;
 }
 
-module.exports = { index, show }
+module.exports = { index, show };

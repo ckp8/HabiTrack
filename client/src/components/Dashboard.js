@@ -77,6 +77,9 @@ const Dashboard = ({ setAuth }) => {
       <button onClick={() => currentState("modal3")}>Achievements</button>
       <button onClick={() => currentState('modal4')}>AddHabit</button>
       <div>{display()}</div>
+      <div>
+        <newHabit />
+      </div>
     </div>
   );
 };
