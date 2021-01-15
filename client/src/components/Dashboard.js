@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import TodayHabits from "./TodayHabits";
 import AllHabits from "./AllHabits";
 import Achievements from "./Achievements";
+import newHabit from "./newHabit";
 import "./dashboard.css";
 // import Modal from "react-modal";
 
@@ -73,6 +74,9 @@ const Dashboard = ({ setAuth }) => {
       <button onClick={() => currentState("modal2")}>All Habits</button>
       <button onClick={() => currentState("modal3")}>Achievements</button>
       <div>{display()}</div>
+      <div>
+        <newHabit />
+      </div>
     </div>
   );
 };
