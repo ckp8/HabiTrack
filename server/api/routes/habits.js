@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const habitsController = require("../controllers/habits");
 const authorise = require("../middleware/authorisation");
+const pool = require("../dbconfig");
 
 router.get("/", authorise, habitsController.index);
-router.get("/:id", authorise, habitsController.show);
 router.get("/:id", authorise, habitsController.show);
 router.post("/", habitsController.create);
 router.patch("/:id", habitsController.update);
