@@ -26,7 +26,7 @@ const Login = ({ setAuth }) => {
         body: JSON.stringify(body),
       });
 
-      const parsedResponse = await response.json();npm
+      const parsedResponse = await response.json();
 
       if (parsedResponse.token) {
         localStorage.setItem("token", parsedResponse.token);

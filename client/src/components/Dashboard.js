@@ -6,12 +6,13 @@ import React, { useEffect, useState } from "react";
 import TodayHabits from "./TodayHabits";
 import AllHabits from "./AllHabits";
 import Achievements from "./Achievements";
-import AddHabit from './AddHabit'
+import AddHabit from "./AddHabit";
 import "./dashboard.css";
 // import Modal from "react-modal";
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
+  const [user_id, setUser_id] = useState();
 
   const getProfile = async () => {
     try {
@@ -23,6 +24,7 @@ const Dashboard = ({ setAuth }) => {
       const parseData = await res.json();
       // console.log(parseData);
       setName(parseData.username);
+      setUser_id(parseData.id);
     } catch (err) {
       console.error(err.message);
     }
@@ -52,15 +54,15 @@ const Dashboard = ({ setAuth }) => {
   const display = () => {
     switch (state) {
       case "modal1":
-        return <TodayHabits />;
+        return <TodayHabits user_id={user_id} />;
       case "modal2":
-        return <AllHabits />;
+        return <AllHabits user_id={user_id} />;
       case "modal3":
-        return <Achievements />;
+        return <Achievements user_id={user_id} />;
       case "modal4":
-        return <AddHabit />
+        return <AddHabit user_id={user_id} />;
       default:
-        return <TodayHabits />;
+        return <TodayHabits user_id={user_id} />;
     }
   };
 
@@ -75,11 +77,8 @@ const Dashboard = ({ setAuth }) => {
       <button onClick={() => currentState("modal1")}>Today's Habits</button>
       <button onClick={() => currentState("modal2")}>All Habits</button>
       <button onClick={() => currentState("modal3")}>Achievements</button>
-      <button onClick={() => currentState('modal4')}>AddHabit</button>
+      <button onClick={() => currentState("modal4")}>AddHabit</button>
       <div>{display()}</div>
-      <div>
-        <newHabit />
-      </div>
     </div>
   );
 };
